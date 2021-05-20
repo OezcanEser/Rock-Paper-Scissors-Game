@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./assets/css/style.css">
-    <title>Rock Paper Scisors Game</title>
+    <title>Rock Paper Scissors Game</title>
 </head>
 
 <body>
@@ -19,29 +19,53 @@
                 <legend>
                     <h1>How many rounds?</h1>
                 </legend>
-                <label for="roundsNum5">5
-                    <input type="radio" id="roundsNum5" name="rounds" value="5">
+                <label for="fiveRounds">5
+                    <input type="radio" id="fiveRounds" name="rounds" value="5">
                 </label>
-                <label for="roundsNum10">10
-                    <input type="radio" id="roundsNum10" name="rounds" value="10">
+                <label for="tenRounds">10
+                    <input type="radio" id="tenRounds" name="rounds" value="10">
                 </label>
-                <label for="roundsNum15">15
-                    <input type="radio" id="roundsNum15" name="rounds" value="15">
+                <label for="fiveTeenRounds">15
+                    <input type="radio" id="fiveTeenRounds" name="rounds" value="15">
                 </label>
-                <label for="roundsNum20">20
-                    <input type="radio" id="roundsNum20" name="rounds" value="20">
+                <label for="tweentyRounds">20
+                    <input type="radio" id="tweentyRounds" name="rounds" value="20">
                 </label>
             </fieldset>
         </form>
-        <fieldset>
-            <legend>User</legend>
+        <section>
+            <fieldset>
+                <legend>
+                    <h2>User</h2>
+                </legend>
+                <output id="playerScore">0</output>
+            </fieldset>
+            <h3>:</h3>
+            <fieldset>
+                <legend>
+                    <h2>Com</h2>
+                </legend>
+                <output id="computerScore">0</output>
+            </fieldset>
+        </section>
+        <fieldset id="result">
+            <output id="playerTake">
+                Let's Play!
+            </output>
+            <h3>vs</h3>
+            <output id="computerTake">
+                Who Wins?
+            </output>
         </fieldset>
         <fieldset>
-            <legend>Com</legend>
+            <input type="button" id="rock" value="✊">
+            <input type="button" id="paper" value="✋">
+            <input type="button" id="scissors" value="✌️">
         </fieldset>
+        <h4>Make your move</h4>
     </main>
     <footer>
-
+        <input type="button" value="Reset">
     </footer>
     <script src="./assets/js/main.js"></script>
 </body>

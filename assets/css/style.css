@@ -3,6 +3,8 @@
   padding: 0;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
+  font-family: sans-serif;
+  font-weight: 400;
 }
 
 body, main {
@@ -10,31 +12,96 @@ body, main {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
 }
 
-section {
+body {
+  background-color: #1F2025;
+}
+
+header {
+  background-color: white;
+  width: 100%;
+}
+
+header, legend, h5 {
+  text-align: center;
+}
+
+section, fieldset, output, h5 {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+}
+
+body, main, section, fieldset, output, h5 {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
 }
 
-body, main, section, fieldset {
+header, fieldset {
+  margin-bottom: 2vh;
+}
+
+body, main, section, fieldset, output {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
 }
 
-fieldset {
-  -ms-flex-pack: distribute;
-      justify-content: space-around;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+main {
+  color: white;
+}
+
+h1 {
+  font-size: 3rem;
+  margin: 3vh auto;
+}
+
+main > fieldset:nth-of-type(1) {
+  width: 30vw;
+  padding: 3vh 0;
+}
+
+h2, h3, label {
+  margin: 0 1rem;
+}
+
+h5 {
+  padding: 2rem 0;
+}
+
+h5, output {
+  width: 10vw;
+  height: 10vh;
+}
+
+main > fieldset:nth-of-type(2), main > fieldset:nth-of-type(3), input#reset {
+  border-style: none;
+}
+
+input#rock, input#paper, input#scissors, input#reset {
+  background-color: transparent;
+}
+
+input#rock, input#paper, input#scissors {
+  font-size: 5rem;
+  border: 1px solid white;
+  border-radius: 100%;
+  padding: 3rem 3.75rem;
+  margin: 0 1rem 1rem;
+  -webkit-transition: all .25s ease-in-out;
+  transition: all .25s ease-in-out;
+}
+
+input#rock:hover, input#paper:hover, input#scissors:hover {
+  margin-bottom: 1vh;
+}
+
+input#reset {
+  margin-top: 3vh;
+  color: #1F2025;
+  padding: 1rem 2rem;
+  background-color: white;
 }
 /*# sourceMappingURL=style.css.map */

@@ -14,47 +14,49 @@
         <h1>Rock Paper Scissors Game</h1>
     </header>
     <main>
-        <form>
-            <fieldset>
-                <legend>
-                    <h1>How many rounds?</h1>
-                </legend>
-                <label for="fiveRounds">5
+        <fieldset>
+            <legend>
+                <h2>How many rounds?</h2>
+            </legend>
+            <div id="roundsTable">
+                <label>5
                     <input type="radio" id="fiveRounds" name="rounds" value="5">
                 </label>
-                <label for="tenRounds">10
+                <label>10
                     <input type="radio" id="tenRounds" name="rounds" value="10">
                 </label>
-                <label for="fiveTeenRounds">15
-                    <input type="radio" id="fiveTeenRounds" name="rounds" value="15">
+                <label>15
+                    <input type="radio" id="fifteenRounds" name="rounds" value="15">
                 </label>
-                <label for="tweentyRounds">20
+                <label>20
                     <input type="radio" id="tweentyRounds" name="rounds" value="20">
                 </label>
-            </fieldset>
-        </form>
+            </div>
+            <div id="roundsCounter" style="display: none;">
+            </div>
+        </fieldset>
         <section>
             <fieldset>
                 <legend>
-                    <h2>User</h2>
+                    <h3>Player</h3>
                 </legend>
                 <output id="playerScore">0</output>
             </fieldset>
             <h3>:</h3>
             <fieldset>
                 <legend>
-                    <h2>Com</h2>
+                    <h3>Com</h3>
                 </legend>
                 <output id="computerScore">0</output>
             </fieldset>
         </section>
-        <fieldset id="result">
+        <fieldset>
             <output id="playerTake">
-                Let's Play!
+                You
             </output>
-            <h3>vs</h3>
+            <h5 id="result">vs</h5>
             <output id="computerTake">
-                Who Wins?
+                Computer
             </output>
         </fieldset>
         <fieldset>
@@ -65,7 +67,7 @@
         <h4>Make your move</h4>
     </main>
     <footer>
-        <input type="button" value="Reset">
+        <input type="button" id="reset" value="Reset">
     </footer>
     <script src="./assets/js/main.js"></script>
 </body>

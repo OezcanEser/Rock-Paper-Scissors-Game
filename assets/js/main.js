@@ -30,6 +30,7 @@ const roundsCounter = document.getElementById("roundsCounter")
 let gameIsOver = false
 
 
+
 // roundsettings
 function gameFlow(playerChoice) {
     if (totalRounds == 0) {
@@ -38,14 +39,14 @@ function gameFlow(playerChoice) {
         roundsTable.style.display = "none"
         roundsCounter.style.display = "block"
     }
-    if (playedRounds == totalRounds - 1 && totalRounds !== 0) {
-        checkScore()
-        return
-    }
-    if (totalRounds > 0) {
+    if (!gameIsOver) {
         game(playerChoice)
         playedRounds++
         roundsCounter.innerHTML = `${playedRounds} / ${totalRounds}`
+        if (playedRounds == totalRounds) {
+            gameIsOver = true
+            checkScore()
+        }
     }
 }
 

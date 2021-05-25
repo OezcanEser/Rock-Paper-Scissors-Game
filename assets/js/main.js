@@ -5,6 +5,7 @@ const playerScoreOutput = document.getElementById("playerScore")
 const computerScoreOutput = document.getElementById("computerScore")
 const result = document.getElementById("result")
 
+
 // rounds
 let playedRounds = 0
 let totalRounds = 0
@@ -29,10 +30,13 @@ const roundsCounter = document.getElementById("roundsCounter")
 let gameIsOver = false
 
 
+// roundsettings
 function gameFlow(playerChoice) {
     if (totalRounds == 0) {
         if (!getTotalRounds())
             return
+        roundsTable.style.display = "none"
+        roundsCounter.style.display = "block"
     }
     if (playedRounds == totalRounds - 1 && totalRounds !== 0) {
         checkScore()
@@ -42,21 +46,23 @@ function gameFlow(playerChoice) {
         game(playerChoice)
         playedRounds++
         roundsCounter.innerHTML = `${playedRounds} / ${totalRounds}`
-        roundsTable.style.display = "none"
-        roundsCounter.style.display = "block"
     }
 }
 
+
+// endscorechecker
 function checkScore() {
     if (playerScore > computerScore) {
-        roundsCounter.innerHTML = "You Win!"
+        roundsCounter.innerHTML = "You win the game!"
     } else if (playerScore < computerScore) {
-        roundsCounter.innerHTML = "Computer Wins!"
+        roundsCounter.innerHTML = "Computer wins the game!"
     } else {
         roundsCounter.innerHTML = "Game ends in a draw!"
     }
 }
 
+
+// roundschecker
 function getTotalRounds() {
     if (fiveRounds.checked) {
         totalRounds = fiveRounds.value
@@ -72,18 +78,26 @@ function getTotalRounds() {
     return true
 }
 
+
+// computer choice function
 function getComputerChoice() {
     const computerChoices = ["rock", "paper", "scissors"]
     const randomChoice = Math.floor(Math.random() * 3)
     return computerChoices[randomChoice]
 }
 
+
+// emoji converter
 function converToEmoji(letter) {
-    if (letter === "rock") return "✊"
-    if (letter === "paper") return "✋"
+    if (letter === "rock")
+        return "✊"
+    if (letter === "paper")
+        return "✋"
     return "✌️"
 }
 
+
+// score calc
 function win(playerChoice, computerChoice) {
     playerScore++
     playerScoreOutput.innerHTML = playerScore
@@ -109,6 +123,8 @@ function draw(playerChoice, computerChoice) {
     result.style.backgroundColor = "gray"
 }
 
+
+// player choises
 function game(playerChoice) {
     const computerChoice = getComputerChoice()
     switch (playerChoice + computerChoice) {
@@ -130,6 +146,8 @@ function game(playerChoice) {
     }
 }
 
+
+// gamefunction
 function main() {
     rock.addEventListener('click', function () {
         gameFlow("rock")
@@ -141,9 +159,10 @@ function main() {
         gameFlow("scissors")
     })
 }
-
 main()
 
+
+// reset button
 resetButton.addEventListener('click', reset)
 function reset() {
     gameIsOver = false
